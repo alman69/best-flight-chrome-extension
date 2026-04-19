@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skiplagged Scanner</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Skiplagged Scanner</h1>
+    <p class="hint">Round-trip only. Paste a Skiplagged search URL where your origin/destination are already selected.</p>
+
+    <label>
+      Search URL
+      <input id="searchUrl" type="url" placeholder="https://skiplagged.com/flights/..." required>
+    </label>
+
+    <section class="grid2">
+      <label>
+        Depart start
+        <input id="departStart" type="date" required>
+      </label>
+      <label>
+        Depart end
+        <input id="departEnd" type="date" required>
+      </label>
+      <label>
+        Return start
+        <input id="returnStart" type="date" required>
+      </label>
+      <label>
+        Return end
+        <input id="returnEnd" type="date" required>
+      </label>
+    </section>
+
+    <label>
+      Price threshold (USD)
+      <input id="threshold" type="number" min="0" step="1" value="50" required>
+    </label>
+
+    <div class="actions">
+      <button id="scanBtn">Run manual scan</button>
+      <button id="csvBtn" class="secondary">Download CSV</button>
+    </div>
+
+    <p id="status" class="status">Idle</p>
+
+    <section id="summary" class="summary hidden"></section>
+  </main>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>

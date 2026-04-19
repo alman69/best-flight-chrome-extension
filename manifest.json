@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Skiplagged Date Range Scanner",
+  "version": "0.1.0",
+  "description": "Manually scan date pairs on Skiplagged and export flights within a threshold from the global cheapest fare.",
+  "permissions": [
+    "tabs",
+    "scripting",
+    "storage",
+    "downloads"
+  ],
+  "host_permissions": [
+    "https://skiplagged.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Skiplagged Scanner"
+  }
+}
